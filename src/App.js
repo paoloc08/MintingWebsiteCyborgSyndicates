@@ -449,7 +449,7 @@ if(!saleActive)
                 color: "var(--accent-text)",
               }}
             >
-              {data.totalSupply} / {CONFIG.MAX_SUPPLY}
+              Cyborg Syndicates Presale!
             </s.TextTitle>
             <s.TextDescription
               style={{
