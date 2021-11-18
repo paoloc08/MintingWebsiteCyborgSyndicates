@@ -469,8 +469,17 @@ if(saleActive)
                   Borgs are almost ready for minting.
                 </s.TextTitle>
           </s.Container>
-
-        </ResponsiveWrapper>
+          <s.SpacerMedium />
+        <s.SpacerLarge />
+        <s.Container flex={1} jc={"center"} ai={"center"}>
+          <StyledImg
+            alt={"example2"}
+            src={"/config/images/example2.png"}
+            style={{ transform: "scaleX(-1)" }}
+          />
+        </s.Container>
+      <s.SpacerMedium />
+        </ResponsiveWrapper>  
         </s.Container>
     </s.Screen>
   );}//End of "else return"
