@@ -198,7 +198,7 @@ function App() {
   }, [blockchain.account]);
 
 
-if(saleActive)
+if(!saleActive)
 {
   return(<s.Screen>
     <s.Container
