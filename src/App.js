@@ -149,7 +149,7 @@ function App() {
       .then((receipt) => {
         console.log(receipt);
         setFeedback(
-          `Welcome to the Syndicate. /n You now own ${mintAmount} BORG(s)! Check out your Borg on Opensea.io.`
+          `Welcome to the Syndicate. You now own ${mintAmount} BORG(s)! Check out your Borg on Opensea.io.`
         );
         setClaimingNft(false);
         dispatch(fetchData(blockchain.account));
