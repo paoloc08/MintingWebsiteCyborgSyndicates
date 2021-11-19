@@ -138,7 +138,7 @@ function App() {
         value: totalCostWei,
       })
       .once("error", (err) => {
-        alert("The transaction did not go through. This may be because: \n- The sale is not active.\n- You tried to mint too many to your wallet (Max 10 allowed in wallet) \n-The amount requested would take the total supply over the sale supply");
+        alert("The transaction did not go through. This may be because:\n\n- The sale is not active.\n- You tried to mint too many to your wallet (Max 10 allowed in wallet) \n-The amount requested would take the total supply over the sale supply");
         setFeedback("Sorry, something went wrong please try again later.");
         setClaimingNft(false);
       })
@@ -193,7 +193,7 @@ function App() {
     getData();
   }, [blockchain.account]);
 
-  var saleActive = false;
+  var saleActive = true;
 
 if(saleActive)
 {
