@@ -231,7 +231,7 @@ if(saleActive)
               color: "var(--accent-text)",
             }}
           >
-            {data.totalSupply} / {CONFIG.MAX_SUPPLY}
+            Connect your wallet!
           </s.TextTitle>
           <s.TextDescription
             style={{
@@ -244,7 +244,7 @@ if(saleActive)
             </StyledLink>
           </s.TextDescription>
           <s.SpacerSmall />
-          {"Connect to your wallet!" ? (
+          {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
             <>
               <s.TextTitle
                 style={{ textAlign: "center", color: "var(--accent-text)" }}
