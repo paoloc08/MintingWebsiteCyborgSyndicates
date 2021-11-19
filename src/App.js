@@ -121,7 +121,7 @@ function App() {
   });
 
   let saleActive = async () => {
-    blockchain.smartContract.methods.publicSaleActive().call({to: CONFIG.CONTRACT_ADDRESS,});
+    blockchain.smartContract.methods.publicSaleActive().call();
   }
 
   const claimNFTs = () => {
@@ -134,7 +134,7 @@ function App() {
     setFeedback(`Minting your Borg...`);
     setClaimingNft(true);
     blockchain.smartContract.methods
-      .publicMint(mintAmount)
+      .presaleMint(mintAmount)
       .send({
         gasLimit: String(totalGasLimit),
         to: CONFIG.CONTRACT_ADDRESS,
@@ -149,7 +149,7 @@ function App() {
       .then((receipt) => {
         console.log(receipt);
         setFeedback(
-          `Welcome to the Syndicate. You now own ${mintAmount} BORG(s)! Check out your Borg on Opensea.io.`
+          `Welcome to the Syndicate. /n You now own ${mintAmount} BORG(s)! Check out your Borg on Opensea.io.`
         );
         setClaimingNft(false);
         dispatch(fetchData(blockchain.account));
@@ -198,7 +198,7 @@ function App() {
   }, [blockchain.account]);
 
 
-if(!saleActive)
+if(saleActive)
 {
   return(<s.Screen>
     <s.Container

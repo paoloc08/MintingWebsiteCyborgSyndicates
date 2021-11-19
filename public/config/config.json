@@ -2,15 +2,15 @@
   "CONTRACT_ADDRESS": "0xbC3B5F06d435592Ef0e32A4BDBAfFd062c3499aa",
   "SCAN_LINK": "https://rinkeby.etherscan.io/address/0xbc3b5f06d435592ef0e32a4bdbaffd062c3499aa",
   "NETWORK": {
-    "NAME": "Rinkeby",
+    "NAME": "Ethereum",
     "SYMBOL": "ETH",
     "ID": 4
   },
   "NFT_NAME": "Cyborg Syndicates",
   "SYMBOL": "BORG",
   "MAX_SUPPLY": 10000,
-  "WEI_COST": 80000000000000000,
-  "DISPLAY_COST": 0.08,
+  "WEI_COST": 60000000000000000,
+  "DISPLAY_COST": 0.06,
   "GAS_LIMIT": 285000,
   "MARKETPLACE": "Opensea",
   "MARKETPLACE_LINK": "https://cyborgsyndicates.com",
