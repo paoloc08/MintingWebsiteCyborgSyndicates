@@ -459,11 +459,14 @@ if(saleActive)
               </StyledLink>
             </s.TextDescription>
             <s.SpacerSmall />
-
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  Minting goes LIVE at: 3:30pm PST. 11:30pm UTC. 9:30am AEST.
+                  Minting goes LIVE at: 
+                  <s.SpacerSmall />PST: 3:30pm 
+                  <s.SpacerSmall />UTC: 11:30pm 
+                  <s.SpacerSmall />AEST: 9:30am 
+
                 </s.TextTitle>
           </s.Container>
           <s.SpacerMedium />
