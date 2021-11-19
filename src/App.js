@@ -119,11 +119,7 @@ function App() {
     MARKETPLACE_LINK: "",
     SHOW_BACKGROUND: false,
   });
-
-  let saleActive = async () => {
-    blockchain.smartContract.methods.publicSaleActive().call();
-  }
-
+  
   const claimNFTs = () => {
     let cost = CONFIG.WEI_COST;
     let gasLimit = CONFIG.GAS_LIMIT;
@@ -142,7 +138,7 @@ function App() {
         value: totalCostWei,
       })
       .once("error", (err) => {
-        alert(err);
+        alert("The transaction did not go through. This may be because: \n- The sale is not active.\n- You tried to mint too many to your wallet (Max 10 allowed in wallet) \n-The amount requested would take the total supply over the sale supply");
         setFeedback("Sorry, something went wrong please try again later.");
         setClaimingNft(false);
       })
@@ -197,6 +193,7 @@ function App() {
     getData();
   }, [blockchain.account]);
 
+  var saleActive = false;
 
 if(saleActive)
 {
