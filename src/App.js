@@ -463,7 +463,7 @@ if(saleActive)
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  Borgs are almost ready for minting.
+                  Minting goes LIVE at: 3:30pm PST. 11:30pm UTC. 9:30am AEST.
                 </s.TextTitle>
           </s.Container>
           <s.SpacerMedium />
