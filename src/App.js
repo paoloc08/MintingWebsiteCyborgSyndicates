@@ -294,8 +294,6 @@ if(saleActive)
                   <s.SpacerSmall />
                   <StyledButton
                     onClick={(e) => {
-                      connected = !connected;
-                      alert(connected);
                       e.preventDefault();
                       dispatch(connect());
                       getData();
