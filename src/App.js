@@ -130,7 +130,7 @@ function App() {
     setFeedback(`Minting your Borg...`);
     setClaimingNft(true);
     blockchain.smartContract.methods
-      .presaleMint(mintAmount)
+      .publicMint(mintAmount)
       .send({
         gasLimit: String(totalGasLimit),
         to: CONFIG.CONTRACT_ADDRESS,
@@ -145,7 +145,9 @@ function App() {
       .then((receipt) => {
         console.log(receipt);
         setFeedback(
-          `Welcome to the Syndicate. You now own ${mintAmount} BORG(s)! Check out your Borg on Opensea.io.`
+          ("Welcome to the Syndicate. You now own ${mintAmount} BORG(s)! Check out your Borg on " + <StyledLink target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
+          {CONFIG.MARKETPLACE}
+        </StyledLink>)
         );
         setClaimingNft(false);
         dispatch(fetchData(blockchain.account));
@@ -193,7 +195,7 @@ function App() {
     getData();
   }, [blockchain.account]);
 
-  var saleActive = true;
+  var saleActive = false;
 
 if(saleActive)
 {
@@ -446,7 +448,7 @@ if(saleActive)
                 color: "var(--accent-text)",
               }}
             >
-              Cyborg Syndicates Presale!
+              Cyborg Syndicates Public Sale!
             </s.TextTitle>
             <s.TextDescription
               style={{
@@ -462,12 +464,23 @@ if(saleActive)
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  Minting goes LIVE at: 
-                  <s.SpacerSmall />PST: 3:30pm 
-                  <s.SpacerSmall />UTC: 11:30pm 
-                  <s.SpacerSmall />AEST: 9:30am 
-
+                <s.TextTitle
+                style={{
+                textAlign: "center",
+                fontSize: 45,
+                fontWeight: "bold",
+                color: "#f7f5f5",
+              }}
+            >
+              Sale Time:
+            </s.TextTitle> 
                 </s.TextTitle>
+                <s.TextTitle style={{textAlign: "center",fontSize: 30,fontWeight: "bold",color: "#ec7c12",}}><s.SpacerXSmall/> PST:</s.TextTitle>
+                <s.TextTitle style={{textAlign: "center",fontSize: 20,fontWeight: "normal",color: "var(--accent-text)",}}><s.SpacerXSmall/> 3:30pm (21st November)</s.TextTitle>
+                <s.TextTitle style={{textAlign: "center",fontSize: 30,fontWeight: "bold",color: "#ec7c12",}}><s.SpacerXSmall/> UTC:</s.TextTitle>
+                <s.TextTitle style={{textAlign: "center",fontSize: 20,fontWeight: "normal",color: "var(--accent-text)",}}><s.SpacerXSmall/> 11:30pm (21st November)</s.TextTitle>
+                <s.TextTitle style={{textAlign: "center",fontSize: 30,fontWeight: "bold",color: "#ec7c12",}}><s.SpacerXSmall/> AEST:</s.TextTitle>
+                <s.TextTitle style={{textAlign: "center",fontSize: 20,fontWeight: "normal",color: "var(--accent-text)",}}><s.SpacerXSmall/> 9:30am (22nd November)</s.TextTitle>
           </s.Container>
           <s.SpacerMedium />
         <s.SpacerLarge />
