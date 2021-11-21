@@ -195,7 +195,7 @@ function App() {
     getData();
   }, [blockchain.account]);
 
-  var saleActive = true;
+  var saleActive = false;
   var connected = false;
 
 if(saleActive)
