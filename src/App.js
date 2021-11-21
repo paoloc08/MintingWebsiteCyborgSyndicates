@@ -195,7 +195,8 @@ function App() {
     getData();
   }, [blockchain.account]);
 
-  var saleActive = false;
+  var saleActive = true;
+  var connected = false;
 
 if(saleActive)
 {
@@ -233,7 +234,7 @@ if(saleActive)
               color: "var(--accent-text)",
             }}
           >
-            Connect your wallet!
+           Mint your Borg!
           </s.TextTitle>
           <s.TextDescription
             style={{
@@ -293,6 +294,8 @@ if(saleActive)
                   <s.SpacerSmall />
                   <StyledButton
                     onClick={(e) => {
+                      connected = !connected;
+                      alert(connected);
                       e.preventDefault();
                       dispatch(connect());
                       getData();
